@@ -1,6 +1,6 @@
-# Queries en JSON!
+# Queries en JSON
 
--  En MongoDB, TODO es JSON :D
+-  En MongoDB, TODO es JSON.
 
 # Tu primera query!!
 
