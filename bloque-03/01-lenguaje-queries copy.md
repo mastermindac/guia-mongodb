@@ -1,15 +1,18 @@
 # Queries en JSON!
-- En MongoDB, TODO es JSON :D
+
+-  En MongoDB, TODO es JSON :D
 
 # Tu primera query!!
-- Buscar la película cuyo título sea 'Die Hard'
+
+-  Buscar la película cuyo título sea 'Die Hard'
 
 # Ejemplo de queries:
+
 {
-    budget: {
-        $gte: 28000000
-    },
-    revenue: {
-        $gte: 168840000
-    }
+budget: {
+$gte: 28000000
+},
+revenue: {
+$gte: 168840000
+}
 }
