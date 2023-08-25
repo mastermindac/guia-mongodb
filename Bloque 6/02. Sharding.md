@@ -1,0 +1,25 @@
+# Sharding
+
+Distribución de los documentos de una colección en diferentes servidores. <br> <br>
+Cada SHARD puede ser o bien una instancia de mongo o bien un replicaset:<br>
+**Replicated Sharding**
+
+## Funcionamiento
+
+Todo este proceso se lleva a cabo con una clave de Sharding, que seria similar a un hashing.<br>
+Definiendo la clave de sharding, se hace un proceso de hashing y se distribuye.<br>
+
+### Uso Correcto
+
+Para tener una clave optima y que se distribuya de manera eficiente, se debe tener en cuenta los siguientes aspectos:
+
+-  Evitar claves que tengan preferencia sobre ciertos documentos (Ya que podemos elegir atributos de los documentos):
+
+   -  Como puede ser nombres de un actor, ya que pueden desequilibrar la cantidad que se va a guardar en un servidor con respecto a los demás. (En casa de tener 100 actores y que 90 se llamen Tom, por ejemplo.)
+   -  Como alternativa se puede utilizar simplemente el ID para que se distribuya de manera consecutiva, concurrente y rotativa. Aunque si los elementos están muy repartidos, esto puede llegar a ser muy costoso.
+
+-  Que los documentos estén tanto bien distribuidos pero que al mismo tiempo están lo mas juntos posibles. (Para que no se tenga que buscar en todos los servidores de no ser necesario.)
+
+## Notas
+
+Al final de cuentas, a menos que se vaya a tener una gran cantidad de datos, no es necesario tener claves de sharding.
